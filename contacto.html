@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FRANCO'S</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+            function valida_envia(){
+            //valido el nombre
+            if (document.fvalida.nombre.value.length == 0) {
+                    alert("Tiene que escribir su nombre")
+                    document.fvalida.nombre.focus()
+                    return 0;
+            } else if (document.fvalida.email.value.length == 0) {
+                    alert("Tiene que escribir un correo válido.")
+                    document.fvalida.edad.focus()
+                    return 0;
+                } else if (document.fvalida.telefono.value.length < 10 || document.fvalida.telefono.value.length > 10) {
+                    alert("Tiene que escribir un teléfono de 10 digitos.")
+                    document.fvalida.edad.focus()
+                    return 0;
+                } else if ( ( !(document.getElementById('telefono_radio').checked) || (document.getElementById('correo_radio').checked) ) && ( (document.getElementById('telefono_radio').checked) || !(document.getElementById('correo_radio').checked)) ) {
+                    alert("Debe seleccionar un método de contacto.")
+                    document.fvalida.interes.focus()
+                    return 0;
+                }
+
+                document.fvalida.submit();
+                alert("El formulario fue enviado exitosamente");
+            } 
+    </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body bgcolor="gray">
+
+    <header>
+        <div>
+            <div style="background-color: black;">
+                        
+                <a href="index.html" style="text-decoration:none;">
+                    <img src="img/francos.jpg" height="120" width="220"> 
+                </a>
+                                        
+            
+                <table height="80" width="100%" bgcolor="red">
+                    <tr>
+                        <td align="center"> <a href="nosotros.html" style="text-decoration:none; color:#FFFFFF">Nosotros </a> </td>
+                        <td align="center"> <a href="reparaciones.html" style="text-decoration:none; color:#FFFFFF">Reparaciones </a> </td>
+                        <td align="center"> <a href="refacciones.html" style="text-decoration:none; color:#FFFFFF">Refacciones </a> </td>
+                        <td align="center"> <a href="contacto.html" style="text-decoration:none; color:#FFFFFF">Contacto </a> </td>
+                        <td align="center"> <a href="login.html" style="text-decoration:none; color:#FFFFFF">Ingresar</a> </td>
+                    </tr>
+                </table>
+            </div> <!-- barra -->
+        </div> <!-- contenedor -->
+    </header>
+
+    <h1>Contacto</h1>
+
+    <table width="100%">
+        <tr>
+            <td> <img src="img/portada.jpg" height="250" width="100%"></td>
+        </tr>
+    </table>
+
+    <main> 
+        <h2>Llena el formulario de contacto</h2>
+
+        <form method="POST" name="fvalida">
+
+                    <p> <strong> Todos los campos son obligatorios </strong> </p>
+
+                    <fieldset>
+                            <legend>Información personal</legend>
+
+                            <table>
+                                <tr>
+                    
+                                    <td> <label for="nombre">Nombre:</label> </td>
+                                    <td> <input type="text" id="nombre" placeholder="tu nombre" name="nombre" required> </td>
+                        
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="email">Email:</label> </td>
+                                    <td> <input type="email" id="email" placeholder="tu correo electrónico" name="email" required> </td>
+                        
+                                        
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="telefono">Telefono:</label> </td>
+                                    <td> <input type="tel" id="telefono" placeholder="tu teléfono" name="telefono" required> </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+            
+                        <fieldset>
+                            <legend>Contacto</legend>
+            
+                            <p>¿Cómo desea ser contactado?</p>
+            
+                            <div class="forma-contacto">
+                                <label for="telefono_radio">Telefono</label>
+                                <input type="radio" name="contacto" id="telefono_radio" name="telefono_radio" required>
+            
+                                <label for="correo_radio">E-mail</label>
+                                <input type="radio" name="contacto" id="correo_radio" name="correo_radio" required>
+                            </div>
+            
+                            <p>Si eligió teléfono, elija la fecha y la hora</p>
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" name="fecha" required>
+            
+                            <label for="hora">Hora:</label>
+                            <input type="time" id="hora" name="hora" min="09:00" max="18:00" required>
+                        </fieldset>
+
+                        <br>
+
+                        <input type="submit"  onclick="valida_envia()"> 
+        </form>
+
+    </main>
+
+    <br>
+
+    <footer>
+        <div style="background-color: black;">
+            <nav align="right">
+                <a href="nosotros.html" style="text-decoration:none; color:#FFFFFF">Nosotros | </a>
+                <a href="reparaciones.html" style="text-decoration:none; color:#FFFFFF">Reparaciones | </a>
+                <a href="refacciones.html" style="text-decoration:none; color:#FFFFFF">Refacciones |</a>
+                <a href="contacto.html" style="text-decoration:none; color:#FFFFFF">Contacto</a>
+            </nav>
+                <p style="color:#FFFFFF">Todos los Derechos Reservados 2019</p>
+            </div>
+    </footer>
+
+</body>
+</html>

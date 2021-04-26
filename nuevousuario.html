@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FRANCO'S</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+            function valida_envia() {
+            //valido el nombre
+            if (document.fvalida.nombre.value.length == 0) {
+                    alert("Tiene que escribir su nombre")
+                    document.fvalida.nombre.focus()
+                    return 0;
+            } else if (document.fvalida.apellido_paterno.value.length == 0) {
+                    alert("Tiene que escribir su apellido paterno")
+                    document.fvalida.apellido_paterno.focus()
+                    return 0;
+            } else if (document.fvalida.apellido_materno.value.length == 0) {
+                    alert("Tiene que escribir su apelldio materno")
+                    document.fvalida.apellido_materno.focus()
+                    return 0;
+            } else if (document.fvalida.email.value.length == 0) {
+                    alert("Tiene que escribir un correo válido.")
+                    document.fvalida.email.focus()
+                    return 0;
+			}else if (document.fvalida.tipo_cliente.value.length == 0) {
+                    alert("Tiene que escribir un tipo de cliente.")
+                    document.fvalida.tipo_cliente.focus()
+                    return 0;
+                } else if (document.fvalida.telefono.value.length < 10) {
+                    alert("Tiene que escribir un teléfono de 10 digitos.")
+                    document.fvalida.telefono.focus()
+                    return 0;
+                } else if (document.fvalida.calle_uno.value.length == 0) {
+                    alert("Tiene que escribir al menos una calle")
+                    document.fvalida.calle_uno.focus()
+                    return 0;
+                } else if (document.fvalida.ciudad.value.length == 0) {
+                    alert("Tiene que escribir la ciudad")
+                    document.fvalida.ciudad.focus()
+                    return 0;
+                } else if (document.fvalida.colonia.value.length == 0) {
+                    alert("Tiene que escribir una colonia")
+                    document.fvalida.colonia.focus()
+                    return 0;
+                } else if (document.fvalida.codigo_postal.value.length != 5) {
+                    alert("Tiene que escribir un codigo postal válido")
+                    document.fvalida.codigo_postal.focus()
+                    return 0;
+                } else if (document.fvalida.rfc.value.length == 0) {
+                    alert("Debe escribir un RFC válido")
+                    document.fvalida.rfc.focus()
+                    return 0;
+                } else if (document.fvalida.password.value.length == 0) {
+                    alert("Debe escribir una contraseña para el usuario.")
+                    document.fvalida.password.focus()
+                    return 0;
+                } 
+                
+                document.fvalida.submit();
+                alert("El formulario fue enviado exitosamente");
+            } 
+    </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body bgcolor="gray">
+
+    <h1>Crear nuevo usuario</h1>
+
+    <table width="100%">
+        <tr>
+            <td> <img src="img/portada.jpg" height="250" width="100%"></td>
+        </tr>
+    </table>
+
+    <main> 
+        <h2>Llena el formulario para crear un nuevo usuario</h2>
+
+        <form method="POST" name="fvalida" action="procesador_usuario.php">
+
+                    <p> <strong> Todos los campos son obligatorios (*) </strong> </p>
+
+                    <fieldset>
+                            <legend>Información personal</legend>
+
+                            <table>
+                                <tr>
+                                    <td> <label for="nombre">Nombre:</label> </td>
+                                    <td> <input type="text" name="nombre" id="nombre" placeholder="nombre" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="apellido_paterno">Apellido paterno:</label> </td>
+                                    <td> <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="apellido paterno" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="apellido_materno">Apellido materno:</label> </td>
+                                    <td> <input type="text" name="apellido_materno" id="apellido_materno" placeholder="apellido materno" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="email">Email:</label> </td>
+                                    <td> <input type="email" name="email" id="email" placeholder="correo electrónico" required> </td>
+     
+                                </tr>
+								<tr>
+                                    <td> <label for="tipo_cliente">Tipo de cliente:</label> </td>
+                                    <td> <input type="text" name="tipo_cliente" id="tipo_cliente" placeholder="tipo cliente" required> </td>
+                                </tr>
+                                <tr>
+                                    <td> <label for="telefono">Telefono:</label> </td>
+                                    <td> <input type="tel" name="telefono" id="telefono" placeholder="teléfono" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="calle_uno">Calle uno:</label> </td>
+                                    <td> <input type="text" name="calle_uno" id="calle_uno" placeholder="calle uno" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="calle_dos">Calle dos:</label> </td>
+                                    <td> <input type="text" name="calle_dos" id="calle_dos" placeholder="calle dos" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="ciudad">Ciudad:</label> </td>
+                                    <td> <input type="text" name="ciudad" id="ciudad" placeholder="ciudad" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="colonia">Colonia:</label> </td>
+                                    <td> <input type="text" name="colonia" id="colonia" placeholder="colonia" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="codigo_postal">Código postal:</label> </td>
+                                    <td> <input type="text" name="codigo_postal" id="codigo_postal" placeholder="código postal" required> </td>
+                                </tr>
+
+                                <tr>
+                                    <td> <label for="rfc">RFC:</label> </td>
+                                    <td> <input type="text" name="rfc" id="rfc" placeholder="rfc" required> </td>
+                                </tr>
+								<tr>
+                                    <td> <label for="password">Contraseña:</label> </td>
+                                    <td> <input type="text" name="contrasena" id="password" placeholder="contraseña" required> </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+
+                        <input type="submit" onclick="valida_envia()"> 
+        </form>
+
+    </main>
+
+</body>
+</html>

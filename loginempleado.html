@@ -1,0 +1,102 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+    <title>FRANCO'S</title>
+
+    <script>
+            function valida_envia() {
+                //valido el nombre
+                if (document.fvalida.correo.value.length == 0) {
+                    alert("Tiene que escribir un correo valido")
+                    document.fvalida.nombre.focus()
+                    return 0;
+    
+                } else if (document.fvalida.contraseña.value.length == 0) {
+                    alert("Tiene que escribir una contraseña")
+                    document.fvalida.edad.focus()
+                    return 0;
+    
+                }
+    
+    
+            }
+    </script>
+
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body background="img/login.jpg">
+
+        <a href="index.html" style="text-decoration:none; color:#FFFFFF"> <h1 align="center">Taller Mecánico FRANCO'S</h1> </a>
+
+        <form name="fvalida" method="POST">
+            <table width="100%" height="100%">
+                <tr>
+                    <td align="center" valign="center">
+                        <table width="350" height="350" bgcolor="black" align="center">
+        
+                            <tr>
+                                <td colspan="2" style="color:#FFFFFF">
+                                    <center> <font size=4> <b>Login</b> </font> </center>
+                                </td>
+                            </tr>
+
+                            <tr align="left">
+                                    <td colspan="2" style="color:#FFFFFF" align="center">Todos los campos son obligatorios </td>
+                            </tr>
+                        
+                            <tr>
+                                <td align="center" style="color:#FFFFFF">Nombre de usuario:</td>
+                                <td>
+                                    <input type="text" size=50 name="correo" required>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td align="center" style="color:#FFFFFF">Contraseña:</td>
+                                <td>
+                                    <input type="Password" size=50 name="contraseña" required>
+                                </td>
+                            </tr>
+                        
+                            <tr border="1">
+                                <td align="center" border="1" colspan="3">
+                                    <input type="reset">
+                                    <a href="usuarioempleado.html"><input type="button" value="Ingresar" onclick="valida_envia()"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table> 
+        </form>
+
+        <footer class="site-footer seccion">
+            <div class="contenedor contenedor-footer" style="background-color: black;">
+                <nav class="navegacion" align="right">
+                    <a href="nosotros.html" style="text-decoration:none; color:#FFFFFF">Nosotros | </a>
+                    <a href="reparaciones.html" style="text-decoration:none; color:#FFFFFF">Reparaciones | </a>
+                    <a href="refacciones.html" style="text-decoration:none; color:#FFFFFF">Refacciones | </a>
+                    <a href="contacto.html" style="text-decoration:none; color:#FFFFFF">Contacto</a>
+                </nav>
+                <p class="copyright" style="color:#FFFFFF">Todos los Derechos Reservados 2019</p>
+            </div>
+        </footer>
+    </body>
+</html>
